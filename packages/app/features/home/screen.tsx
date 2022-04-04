@@ -1,20 +1,26 @@
 import { View, Text } from 'react-native'
+import { Text as DripsyText } from 'dripsy'
 import { TextLink } from 'solito/link'
 import { MotiLink } from 'solito/moti'
+import { TextProps } from 'react-native'
+
+function Test(props: TextProps) {
+  return <Text {...props } />
+}
 
 export function HomeScreen() {
   return (
     <View
       className="flex flex-1 justify-center items-center p-[16px]"
     >
-      <Text accessibilityRole="header" aria-level="1" className="font-extrabold text-3xl my-[0.67em]">Welcome to Solito!</Text>
+      <Test accessibilityRole="header" aria-level="1" className="font-extrabold text-3xl my-[20px]">Welcome to Solito.</Test>
       <View className="max-w-[600px]">
-        <Text className="text-center text-base my-[1em]">
+        <Text className="text-center text-base my-[16px]">
           Here is a basic starter to show you how you can navigate from one
           screen to another. This screen uses the same code on Next.js and React
           Native.
         </Text>
-        <Text className="text-center text-base my-[1em]">
+        <Text className="text-center text-base my-[16px]">
           Solito is made by{' '}
           <Text
             href="https://twitter.com/fernandotherojo"
@@ -53,12 +59,12 @@ export function HomeScreen() {
             duration: 150,
           }}
         >
-          <Text
+          <DripsyText
             selectable={false}
             className="text-base text-black font-bold"
           >
             Moti Link
-          </Text>
+          </DripsyText>
         </MotiLink>
       </View>
     </View>
