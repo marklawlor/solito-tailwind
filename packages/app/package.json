@@ -1,0 +1,15 @@
+{
+  "version": "0.0.0",
+  "name": "app",
+  "main": "index.ts",
+  "dependencies": {
+    "@expo/html-elements": "^0.1.0",
+    "@react-navigation/native": "^6.0.8",
+    "@react-navigation/native-stack": "^6.5.0",
+    "react-native-web": "0.0.0-b2a3e86d",
+    "expo-linking": "^3.0.0",
+    "moti": "0.18.0-alpha.8",
+    "solito": "0.0.22"
+  },
+  "sideEffects": false
+}
