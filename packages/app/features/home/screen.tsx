@@ -1,49 +1,53 @@
-import { View, Text } from 'react-native'
-import { Text as DripsyText } from 'dripsy'
+import { Text, View, H1, P, Row, A } from 'dripsy'
 import { TextLink } from 'solito/link'
 import { MotiLink } from 'solito/moti'
-import { TextProps } from 'react-native'
+import { styled, useTailwind } from "tailwindcss-react-native"
 
-function Test(props: TextProps) {
-  return <Text {...props } />
-}
+const StyledText = styled(Text)
+const StyledView = styled(View)
+const StyledH1 = styled(H1)
+const StyledP = styled(P)
+const StyledA = styled(A)
 
 export function HomeScreen() {
   return (
-    <View
-      className="flex flex-1 justify-center items-center p-[16px]"
+    <StyledView
+      tw="flex flex-1 justify-center items-center p-4"
     >
-      <Test accessibilityRole="header" aria-level="1" className="font-extrabold text-3xl my-[20px]">Welcome to Solito.</Test>
-      <View className="max-w-[600px]">
-        <Text className="text-center text-base my-[16px]">
+      <StyledH1 tw="font-extrabold">Welcome to Solito.</StyledH1>
+      <StyledView tw="max-w-xl">
+        <StyledP tw="text-center">
           Here is a basic starter to show you how you can navigate from one
           screen to another. This screen uses the same code on Next.js and React
           Native.
-        </Text>
-        <Text className="text-center text-base my-[16px]">
+        </StyledP>
+        <StyledP style={{ textAlign: "center" }}>
           Solito is made by{' '}
-          <Text
+          <StyledA
             href="https://twitter.com/fernandotherojo"
             // @ts-expect-error react-native-web only types
             hrefAttrs={{
               target: '_blank',
               rel: 'noreferrer',
             }}
+            tw="text-blue-600"
           >
             Fernando Rojo
-          </Text>
+          </StyledA>
           .
-        </Text>
-      </View>
-      <View className="h-[32px]" />
-      <View className="flex flex-row">
+        </StyledP>
+      </StyledView>
+      <StyledView tw="h-8" />
+      <Row>
         <TextLink
-          className="text-blue-500"
           href="/user/fernando"
+          textProps={{
+            style: useTailwind("text-base font-bold text-blue-600"),
+          }}
         >
           Regular Link
         </TextLink>
-        <View  />
+        <StyledView tw="w-8" />
         <MotiLink
           href="/user/fernando"
           animate={({ hovered, pressed }) => {
@@ -59,14 +63,14 @@ export function HomeScreen() {
             duration: 150,
           }}
         >
-          <DripsyText
+          <StyledText
             selectable={false}
-            className="text-base text-black font-bold"
+            tw="text-base text-black font-bold"
           >
             Moti Link
-          </DripsyText>
+          </StyledText>
         </MotiLink>
-      </View>
-    </View>
+      </Row>
+    </StyledView>
   )
 }
