@@ -21,7 +21,7 @@ export function HomeScreen() {
           screen to another. This screen uses the same code on Next.js and React
           Native.
         </StyledP>
-        <StyledP style={{ textAlign: "center" }}>
+        <StyledP tw="text-center">
           Solito is made by{' '}
           <StyledA
             href="https://twitter.com/fernandotherojo"
