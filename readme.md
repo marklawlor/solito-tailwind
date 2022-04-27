@@ -4,7 +4,7 @@ This Solito app uses [tailwindcss-react-native](https://github.com/marklawlor/ta
 
 When running in web:
 
-> This example is using the reac-native-web 0.18 preview
+> This example is using the react-native-web 0.18 preview
 
 - Styles are compiled by NextJS and outputted as CSS Stylesheets
 - RN components are giving classNames and use the CSS rules
